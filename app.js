@@ -39,12 +39,12 @@ app.use(pricesRouter);
 
 async function findOneListingByName(client, nameOfListing) {
   const result = await client
-    .db('capstone')
-    .collection('items')
-    .findOne({ name: nameOfListing });
+  .db('capstone')
+  .collection('items')
+  .findOne({ name: nameOfListing });
   if (result) {
     console.log(
-      `Found a listing in the collection with the name '${nameOfListing}':`
+      `Found a listing in the collection with the name '${nameOfListing}':`,
     );
     console.log(result);
   } else {
@@ -54,10 +54,10 @@ async function findOneListingByName(client, nameOfListing) {
 
 async function findItems(client) {
   const result = await client
-    .db('capstone')
-    .collection('items')
-    .find({})
-    .toArray();
+  .db('capstone')
+  .collection('items')
+  .find({})
+  .toArray();
   if (result) {
     // console.log(result);
   } else {
@@ -101,3 +101,5 @@ app.listen(PORT, () => {
 // // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
+
+export default app;
