@@ -8,7 +8,11 @@ import pricesRouter from './prices.js';
 const routes = Router();
 
 routes.get('/', async function(req, res) {
-  res.send('test');
+  res.send(`
+    <h1>Reached api</h1>
+    <br />
+    <a href="/cities">Cities</a>
+`);
 });
 
 routes.use('/cart', cartRouter);
